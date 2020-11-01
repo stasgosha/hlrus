@@ -1,0 +1,43 @@
+.pagination{
+	display: flex;
+	justify-content: center;
+
+	li{
+		margin-right: 6px;
+
+		&:last-child{
+			margin-right: 0;
+		}
+
+		a{
+			border-radius: 50%;
+			width: 36px;
+			height: 36px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 18px;
+			line-height: 1;
+			text-align: center;
+			color: inherit;
+			transition: all $t;
+			font-weight: 600;
+
+			&:hover,
+			&:focus{
+				background: #fff;
+				color: $primary;
+			}
+		}
+
+		&.current{
+			a{
+				background: #fff;
+				cursor: default;
+				pointer-events: none;
+				color: $primary;
+				box-shadow: 0 4px 10px rgba(#000, .07);
+			}
+		}
+	}
+}

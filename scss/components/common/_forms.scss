@@ -1,0 +1,132 @@
+.form{
+	.input-field,
+	textarea,
+	.select-field select,
+	input[type="date"]{
+		border: 1px solid #e0e0e0;
+		appearance: none;
+		background: #fff;
+		border-radius: 5px;
+		flex: auto;
+		height: 50px;
+		font-size: 16px;
+		color: $text-color;
+		font-family: $main-font;
+		font-weight: 400;
+		padding: 0 20px;
+		outline: none !important;
+		transition: all $t;
+		width: 100%;
+		appearance: none;
+		// max-width: 260px;
+
+		&[readonly]{
+			color: rgba($text-color, .3);
+		}
+
+		&::placeholder{
+			color: $text-color;
+			opacity: 1;
+			transition: all $t;
+		}
+
+		&:focus:not([readonly]){
+			border-color: $primary;
+
+			&::placeholder{
+				opacity: 1;
+			}
+		}
+
+		@media screen and (max-width: 767px){
+			font-size: 14px;
+			height: 38px;
+			padding: 0 12px;
+		}
+	}
+
+	textarea{
+		resize: none;
+		padding: 15px 20px;
+		height: 125px;
+		display: block;
+
+		@media screen and (max-width: 767px){
+			height: 100px;
+			padding: 10px 12px;
+		}
+	}
+
+	.form-row{
+		margin-bottom: 15px;
+
+		&:last-child,
+		&.last{
+			padding-top: 10px;
+			margin-bottom: 0;
+		}
+	}
+}
+
+.select-field{
+	position: relative;
+
+	&:after{
+		content: '';
+		display: block;
+		width: 10px;
+		height: 10px;
+		background: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 257 160'%3E%3Cpath d='M30 1L0 31l128 128L256 31 226 1l-98 98L30 1z' fill='%230bbb62'/%3E%3C/svg%3E") no-repeat center center / contain;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 8px;
+		z-index: 2;
+	}
+
+	select{
+		border: 1px solid #e0e0e0;
+		border-radius: 5px;
+		appearance: none;
+		background: #fff;
+		font-size: 14px;
+		font-family: inherit;
+		padding: 0 25px 0 15px;
+		display: block;
+		height: 42px;
+		width: 100%;
+
+		&:focus{
+			border-color: $primary;
+			outline: none;
+		}
+	}
+}
+
+.file-input{
+	position: relative;
+
+	input{
+		appearance: none;
+
+		+ label{
+			width: 100%;
+			height: 50px;
+			background: #fff;
+			border-radius: $r;
+			border: 1px solid $primary;
+			color: $text-color;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		&.selected{
+			& + label{
+				background: $primary;
+				color: #fff;
+			}
+		}
+	}
+}

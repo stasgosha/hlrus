@@ -1,0 +1,89 @@
+.subscribe-section{
+	padding: 22px 0;
+	border-top: 1px solid #EBEBEB;
+}
+
+.subscribe-block{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	.block-content{
+		max-width: 790px;
+		display: flex;
+		align-items: center;
+		margin-right: 20px;
+
+		.bc-icon{
+			width: 40px;
+			height: 40px;
+			margin-right: 20px;
+			fill: $primary;
+			display: block;
+			flex: none;
+		}
+
+		.bc-content{
+			h2{
+				font-size: 18px;
+				line-height: 24px;
+				font-weight: bold;
+				margin-bottom: 0;
+				color: $accent;
+			}
+
+			p{
+				line-height: 1.375;
+			}
+		}
+	}
+
+	.block-button{
+		margin-left: auto;
+	}
+
+	.block-count{
+		margin-left: 80px;
+		color: $primary;
+		font-size: 16px;
+		line-height: 1.2;
+		margin-right: 36px;
+
+		strong{
+			color: $accent;
+			font-size: 30px;
+			font-weight: bold;
+			line-height: 1.1;
+		}
+	}
+
+	@media screen and (max-width: 1319px){
+		.block-count{
+			margin-right: 0;
+		}
+	}
+
+	@media screen and (max-width: 991px){
+		.block-count{
+			margin-left: 30px;
+		}
+	}
+
+	@media screen and (max-width: 575px){
+		flex-wrap: wrap;
+
+		.block-content{
+			margin-right: 0;
+			width: 100%;
+			margin-bottom: 24px;
+		}
+
+		.block-button{
+			margin-left: 0;
+		}
+
+		.block-count{
+			margin-left: 20px;
+		}
+	}
+}

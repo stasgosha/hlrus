@@ -1,0 +1,25 @@
+.image-card{
+	padding: 10px;
+	width: 100%;
+	background: #fff;
+	border-radius: $r;
+	box-shadow: $shadow;
+
+	img{
+		width: 100%;
+		display: block;
+		height: auto;
+	}
+
+	&.medium-padding{
+		padding: 15px;
+	}
+
+	&.left-top-radius{
+		border-top-left-radius: 80px;
+
+		img{
+			border-top-left-radius: 70px;
+		}
+	}
+}

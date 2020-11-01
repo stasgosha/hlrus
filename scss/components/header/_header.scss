@@ -1,0 +1,184 @@
+.header{
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px 0;
+	background: #fff;
+	box-shadow: 0px 2px 7px rgba(18, 66, 113, 0.22);
+	transition: padding $t;
+
+	.header-inner{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: calc(100% + 15px * 2);
+		margin-left: -15px;
+		margin-right: -15px;
+		
+		.header-block{
+			padding: 0 15px;
+
+			&.opener-wrap{
+				// width: 250px;
+			}
+		}
+
+		@media screen and (max-width: 575px){
+			grid-template-columns: 60px max-content 60px;
+			display: grid;
+			grid-gap: 15px;
+
+			.header-block{
+				&.search-wrapper{
+					grid-column: span 3;
+				}
+			}
+		}
+	}
+
+	&.sticky{
+		padding: 10px 0;
+	}
+
+	@media screen and (max-width: 1199px){
+		padding: 15px 0;
+	}
+
+	@media screen and (max-width: 575px){
+		padding: 20px 0 0;
+		padding-bottom: 0 !important;
+
+		&.sticky{
+			.search-wrapper{
+				// display: none !important;
+			}
+		}
+	}
+}
+
+.top-nav{
+	> ul{
+		display: flex;
+		font-weight: 400;
+
+		> li{
+			margin-right: 35px;
+
+			@media screen and (max-width: 1319px){
+				margin-right: 20px;
+			}
+
+			&:last-child{
+				margin-right: 0;
+			}
+
+			> a{
+				color: inherit;
+				white-space: nowrap;
+
+				&:hover,
+				&:focus{
+					color: $primary;
+				}
+			}
+
+			&.current-menu-item,
+			&.current-menu-parent{
+				> a{
+					color: $primary;
+				}
+			}
+			
+			&.current-menu-item{
+				> a{
+					cursor: default;
+				}
+			}
+		}
+	}
+}
+
+.search-block{
+	position: relative;
+	display: block;
+	width: 100%;
+	max-width: 220px;
+
+	@media screen and (max-width: 575px){
+		max-width: unset;
+		width: calc(100% + 15px * 2);
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+
+	.block-field{
+		background: #FCFCFC;
+		appearance: none;
+		border: 1px solid #FCFCFC;
+		box-shadow: none;
+		border-radius: 0;
+		width: 100%;
+		height: 50px;
+		font-family: inherit;
+		padding: 0 73px 0 23px;
+		color: $text-color;
+		font-size: 15px;
+
+		&:placeholder{
+			color: #6D8092;
+			opacity: 1;
+		}
+
+		@media screen and (max-width: 575px){
+			background: #eff1f4;
+			border-color: #eff1f4;
+		}
+
+		&:focus{
+			border: 1px solid rgba($accent, .3);
+			outline: none;
+		}
+	}
+
+	.block-button{
+		width: 50px;
+		height: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: $accent;
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		.btn-icon{
+			fill: #fff;
+			transition: all $t;
+			width: 20px;
+			height: 20px;
+			display: block;
+		}
+
+		&:hover{
+			background: $primary;
+		}
+	}
+}
+
+.logo-block{
+	display: block;
+
+	img{
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+
+	@media screen and (max-width: 1199px){
+		img{
+			height: 30px;
+		}
+	}
+}

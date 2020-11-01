@@ -1,0 +1,140 @@
+.cutted-block{
+	background: $primary;
+	@include clipCorner(40px);
+	width: 290px;
+	height: 290px;
+	display: flex;
+	align-items: center;
+	padding: 20px 80px 20px 20px;
+	position: relative;
+	color: #fff;
+
+	&.blue{
+		background: $accent;
+	}
+
+	&:after{
+		content: '';
+		display: block;
+		width: calc(13px * 5 - 10px);
+		height: calc(13px * 10 - 10px);
+		background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'%3E%3Cpath d='M1.3 2.6c.7 0 1.3-.6 1.3-1.3C2.6.6 2 0 1.3 0 .6 0 0 .6 0 1.3c0 .7.6 1.3 1.3 1.3z' fill='%23fff' fill-opacity='.6'/%3E%3C/svg%3E");
+		background-size: 13px 13px;
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+
+		@media screen and (max-width: 575px){
+			width: calc(10px * 5 - 8px);
+			height: calc(10px * 10 - 8px);
+			background-size: 10px 10px;
+			right: 8px;
+			bottom: 8px;
+		}
+	}
+
+	.block-text{
+		font-size: 16px;
+		line-height: 22px;
+
+		strong{
+			display: block;
+			font-size: 36px;
+			line-height: 1;
+			font-weight: 400;
+			padding: 5px 0;
+		}
+	}
+
+	.block-search-form{
+		display: flex;
+		width: 100%;
+		max-width: 243px;
+		position: relative;
+		margin-top: 16px;
+
+		form{
+			width: 100%;
+		}
+
+		.form-field{
+			height: 50px;
+			border: 0;
+			display: block;
+			appearance: none;
+			border-radius: 0;
+			border-bottom: 1px solid rgba(#fff, .8);
+			padding-right: 40px;
+			color: #fff;
+			background: transparent;
+			width: 100%;
+			transition: all $t;
+			font-size: 16px;
+			font-family: inherit;
+
+			&:focus{
+				border-bottom-color: $accent;
+				outline: none;
+			}
+		}
+
+		.form-button{
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			right: 0;
+			top: 10px;
+
+			svg{
+				width: 100%;
+				height: 100%;
+				fill: #fff;
+				transition: all $t;
+			}
+
+			&:hover,
+			&:focus{
+				svg{
+					fill: $accent;
+				}
+			}
+		}
+	}
+
+	&.big{
+		width: 100%;
+		height: 370px;
+		padding: 60px 72px 60px 57px;
+	}
+
+	&.with-form{
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	@media screen and (max-width: 1199px){
+		width: 260px;
+		height: 260px;
+
+		&.big{
+			padding-left: 30px;
+			padding-right: 40px;
+		}
+	}
+
+	@media screen and (max-width: 575px){
+		&.big{
+			height: auto;
+			padding: 30px 78px 30px 30px;
+		}
+
+		.block-text{
+			font-size: 14px;
+			line-height: 1.35;
+
+			strong{
+				font-size: 26px;
+			}
+		}
+	}
+}

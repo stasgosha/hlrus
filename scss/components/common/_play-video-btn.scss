@@ -1,0 +1,64 @@
+.play-video-btn{
+	display: flex;
+	align-items: center;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+
+	.btn-text{
+		display: flex;
+		align-items: center;
+		margin-right: 6px;
+
+		&:after{
+			content: '';
+			display: block;
+			width: 99px;
+			height: 1px;
+			margin-left: 6px;
+			background: $primary;
+		}
+	}
+
+	.btn-icon{
+		flex: none;
+		width: 60px;
+		height: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		background: $primary;
+		transition: all $t;
+
+		&:after{
+			content: '';
+			display: block;
+			width: 12px;
+			height: 12px;
+			background: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.6.3C1.5-.4.6.2.6 1.4v9.2c0 1.2.9 1.8 2 1.1l8-4.6c1-.6 1-1.6 0-2.2L2.6.3z' fill='%23fff'/%3E%3C/svg%3E") no-repeat center center / contain;
+		}
+	}
+
+	&.no-line{
+		.btn-text{
+			margin-right: 0;
+
+			&:after{
+				display: none;
+			}
+		}
+
+		.btn-icon{
+			margin-left: 30px;
+		}
+	}
+
+	&:hover,
+	&:focus{
+		.btn-icon{
+			background: $accent;
+		}
+	}
+}

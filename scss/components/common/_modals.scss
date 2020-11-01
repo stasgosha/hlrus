@@ -1,0 +1,232 @@
+.modal{
+	display: none;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: rgba(#000, .67);
+	overflow-y: auto;
+	overscroll-behavior-y: contain;
+	z-index: 999;
+	// transform: scale(0);
+	visibility: hidden;
+	transition: visibility .4s, opacity .4s;
+	cursor: pointer;
+	opacity: 0;
+
+	.modal-dialog{
+		width: 380px;
+		max-width: calc(100% - 15px * 2);
+		margin: 80px auto 60px;
+		cursor: default;
+		flex: none;
+		position: relative;
+		transform: translateY(-100%);
+		opacity: 0;
+		visibility: hidden;
+		transition: all $t;
+		transition-delay: .2s;
+	}
+
+	&.visible{
+		visibility: visible;
+		opacity: 1;
+
+		.modal-dialog{
+			transform: translateY(0);
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&.video-modal{
+		.modal-dialog{
+			width: auto;
+			max-width: 70vw;
+
+			@media screen and (max-width: 991px){
+				max-width: 90vw;
+			}
+		}
+
+		.modal-content{
+			background: transparent;
+			padding: 0;
+		}
+
+		.modal-video{
+			width: 100%;
+			position: relative;
+
+			&:before{
+				content: '';
+				display: block;
+				padding-top: 56.25%;
+			}
+
+			iframe{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				display: block;
+				border: 0;
+			}
+
+			&.vimeo{
+				&:before{
+					padding-top: 52%;
+				}
+			}
+		}
+	}
+
+	.modal-content{
+		background: #fff;
+		border-radius: $r;
+		position: relative;
+		padding: 65px 30px 45px;
+	}
+
+	.modal-text{
+		text-align: center;
+	}
+
+	@media screen and (max-width: 767px){
+		.modal-content{
+			padding: 50px 15px 35px;
+		}
+
+		.modal-dialog{
+			width: 290px;
+		}
+
+		.modal-text{
+			font-size: 14px;
+			line-height: 24px;
+		}
+	}
+}
+
+.modal-icon{
+	background: $gradient;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	box-shadow: $shadow;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: -30px;
+	z-index: 2;
+
+	i{
+		display: block;
+	}
+
+	@media screen and (max-width: 767px){
+		width: 48px;
+		height: 48px;
+		top: -24px;
+
+		i{
+			max-width: 24px;
+			max-height: 20px;
+		}
+	}
+}
+
+.modal-close{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 30px;
+	height: 30px;
+	// border-radius: 50%;
+	opacity: 1;
+	transition: all $t;
+	appearance: none;
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+
+	&:before,
+	&:after{
+		content: '';
+		display: block;
+		width: 16px;
+		height: 2px;
+		background: #000;
+		position: absolute;
+		left: calc(50% - 16px / 2);
+		top: calc(50% - 2px / 2);
+		transition: all $t;
+	}
+
+	&:before{
+		transform: rotate(-45deg);
+	}
+
+	&:after{
+		transform: rotate(45deg);
+	}
+
+	&:hover{
+		&:before,
+		&:after{
+			background: $primary;
+		}
+	}
+
+	.video-modal &{
+		left: calc(100% + 10px);
+		top: -7px;
+		right: auto;
+
+		&:before,
+		&:after{
+			background: #fff;
+		}
+
+		&:hover{
+			&:before,
+			&:after{
+				background: $primary;
+			}
+		}
+	}
+}
+
+.modal-caption{
+	font-size: 24px;
+	line-height: 1.5;
+	padding-bottom: 10px;
+	text-align: center;
+	font-family: $second-font;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	font-weight: 400;
+	position: relative;
+	margin-bottom: 25px;
+
+	&:before{
+		content: '';
+		display: block;
+		width: 28px;
+		height: 2px;
+		background: $primary;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 0;
+	}
+
+	@media screen and (max-width: 767px){
+		font-size: 18px;
+	}
+}

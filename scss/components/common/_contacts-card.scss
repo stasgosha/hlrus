@@ -1,0 +1,79 @@
+.contacts-card{
+	height: 100%;
+	background: #fff;
+	border-radius: $r;
+	box-shadow: $shadow;
+	position: relative;
+	padding: 65px 95px 55px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	&:before{
+		content: '';
+		display: block;
+		width: calc(100% - 10px * 2);
+		height: calc(100% - 10px * 2);
+		position: absolute;
+		left: 10px;
+		top: 10px;
+		border: 1px solid #efefef;
+		border-radius: 4px;
+		pointer-events: none;
+	}
+
+	.card-icon{
+		background: $gradient;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		box-shadow: $shadow;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: -30px;
+		z-index: 2;
+
+		i{
+			display: block;
+		}
+	}
+
+	.card-caption{
+		text-align: center;
+		font-size: 18px;
+		line-height: 30px;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-bottom: 20px;
+		font-weight: 600;
+	}
+
+	.card-footer{
+		flex: none;
+		min-height: 54px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	@media screen and (max-width: 1199px){
+		padding-left: 55px;
+		padding-right: 55px;
+	}
+
+	@media screen and (max-width: 575px){
+		padding-left: 20px;
+		padding-right: 20px;
+
+		.card-caption{
+			font-size: 15px;
+			line-height: 26px;
+			margin-bottom: 18px;
+		}
+	}
+}

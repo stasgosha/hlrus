@@ -1,0 +1,26 @@
+// Fonts
+$main-font: 'Uni Neue', Arial, sans-serif;
+$second-font: $main-font;
+// $third-font: 'Playfair Display SC', serif;
+
+// Colors
+$red: #E30613;
+$blue: #124271;
+
+$gray: #212121;
+$dark: #000015;
+$light: #777;
+
+$text-color: $light;
+$text-dark: $dark;
+$text-light: $light;
+
+$primary: $red;
+$accent: $blue;
+
+// Params
+$body-bg: #fff; // site background
+$t: .3s; // animation duration
+$r: 0; // default border radius
+$shadow: 0px 4px 35px rgba(#000, 0.09); // default card shadow
+$gradient: linear-gradient(to bottom, #deb986, #d9aa6d 100%)
