@@ -32,7 +32,7 @@
 		padding-top: 0;
 	}
 
-	@media screen and (max-width: 575px){
+	@media screen and (max-width: 767px){
 		padding-bottom: 5px;
 	}
 }
@@ -48,7 +48,7 @@
 		max-width: 340px;
 		margin-bottom: 10px;
 
-		@media screen and (max-width: 575px){
+		@media screen and (max-width: 767px){
 			margin-left: 0;
 			max-width: unset;
 			margin-bottom: 33px;
@@ -93,7 +93,7 @@
 		}
 	}
 
-	@media screen and (max-width: 575px){
+	@media screen and (max-width: 767px){
 		padding: 55px 20px 15px;
 
 		.mobile-info-list{
@@ -201,7 +201,7 @@
 		z-index: 5;
 	}
 
-	@media screen and (max-width: 575px){
+	@media screen and (max-width: 767px){
 		.play-video-btn{
 			text-transform: none;
 			max-width: 190px;
@@ -214,114 +214,6 @@
 			.btn-icon{
 				margin-left: 20px;
 			}
-		}
-	}
-}
-
-.article-card{
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	border-radius: 2px;
-	border: 1px solid rgba(#D7DDE3, .4);
-	position: relative;
-
-	&:before,
-	&:after{
-		content: '';
-		display: block;
-		width: 0;
-		height: 0;
-		border-style: solid;
-		position: absolute;
-		right: -2px;
-		bottom: -2px;
-	}
-
-	&:before{
-		border-width: 0 0 40px 40px;
-		border-color: transparent transparent rgba(#D7DDE3, .4) transparent;
-	}
-
-	&:after{
-		border-width: 0 0 39px 39px;
-		border-color: transparent transparent #fff transparent;
-	}
-
-	.card-image{
-		position: relative;
-		overflow: hidden;
-		display: block;
-
-		&:before{
-			content: '';
-			display: block;
-			padding-top: 63.415%;
-			width: 100%;
-			z-index: 2;
-			position: relative;
-			background: rgba(#000015, .5);
-		}
-		
-		img{
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			left: 0;
-			top: 0;
-			display: block;
-			object-fit: cover;
-			object-position: center center;
-			border-radius: 2px;
-			transition: all .5s;
-		}
-
-		&:hover{
-			img{
-				transform: scale(1.2);
-			}
-		}
-	}
-
-	.card-content{
-		padding: 17px 25px 32px;
-		flex: auto;
-		background: #fff;
-		display: flex;
-		flex-direction: column;
-
-		@media screen and (max-width: 575px){
-			padding: 10px 15px 20px;
-		}
-	}
-
-	.card-text{
-		flex: auto;
-		font-size: 15px;
-		line-height: 22px;
-	}
-
-	.card-footer{
-		margin-top: 20px;
-	}
-
-	.card-caption{
-		color: $text-dark;
-		font-size: 20px;
-		line-height: 1.6;
-		margin-bottom: 4px;
-		font-weight: 400;
-
-		a{
-			color: inherit;
-
-			&:hover{
-				color: $primary;
-			}
-		}
-
-		@media screen and (max-width: 575px){
-			font-size: 18px;
 		}
 	}
 }

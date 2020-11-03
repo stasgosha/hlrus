@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		let dest = $( tabId );
 		dest.stop().fadeIn(300).siblings().hide(0);
 
-		$('[data-tab="'+tabId+'"]').parent().addClass('current-menu-item').siblings().removeClass('current-menu-item');
+		$('[data-tab="'+tabId+'"]').addClass('current').parent().siblings().find('[data-tab]').removeClass('current');
 	}
 
 	$("[data-tab]").click(function(e){

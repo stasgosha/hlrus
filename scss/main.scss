@@ -24,9 +24,11 @@
 @import "components/common/pagination";
 @import "components/common/cutted-block";
 @import "components/common/play-video-btn";
+@import "components/common/article-card";
 // @import "components/common/filter-nav";
 // @import "components/common/dropdown";
 // @import "components/common/accordion";
+@import "components/common/tabs-nav";
 
 // Sections
 @import "components/sections/first-screen-section";
@@ -37,3 +39,8 @@
 @import "components/sections/info-section";
 @import "components/sections/have-a-question-section";
 @import "components/sections/subscribe-section";
+@import "components/sections/page-header-section";
+@import "components/sections/filter-section";
+@import "components/sections/category-first-screen";
+@import "components/sections/small-info-section";
+@import "components/sections/category-main-section";
