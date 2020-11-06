@@ -5,6 +5,7 @@
 	li{
 		flex: auto;
 		border-right: 1px solid #EBEBEB;
+		display: flex;
 
 		&:last-child{
 			border-right: 0;
@@ -38,6 +39,11 @@
 			background: $primary;
 			color: #fff;
 			font-weight: bold;
+		}
+
+		@media screen and (max-width: 1319px){
+			padding: 10px 15px;
+			font-size: 15px;
 		}
 	}
 

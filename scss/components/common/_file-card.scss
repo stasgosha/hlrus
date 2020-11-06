@@ -1,0 +1,114 @@
+.file-card{
+	display: grid;
+	grid-template-columns: 150px 1fr;
+	padding: 20px 30px;
+	grid-gap: 40px;
+	border: 1px solid rgba(#D7DDE3, .4);
+	position: relative;
+
+	&:before,
+	&:after{
+		content: '';
+		display: block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		position: absolute;
+		right: -2px;
+		bottom: -2px;
+	}
+
+	&:before{
+		border-width: 0 0 40px 40px;
+		border-color: transparent transparent rgba(#D7DDE3, .4) transparent;
+	}
+
+	&:after{
+		border-width: 0 0 39px 39px;
+		border-color: transparent transparent #fff transparent;
+	}
+
+	.card-image{
+		img{
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	.card-content{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.card-caption{
+		font-size: 18px;
+		line-height: 1.44;
+		margin-bottom: 20px;
+		color: $text-dark;
+	}
+
+	.card-footer{
+		margin-top: auto;
+	}
+
+	.card-hidden-content{
+		position: absolute;
+		visibility: hidden;
+		transform: scale(0.8);
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background: #F2F3F3;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all $t;
+	}
+
+	&:hover,
+	&:focus-within{
+		.card-hidden-content{
+			opacity: 1;
+			visibility: visible;
+			transform: scale(1);
+		}
+	}
+
+	.card-download{
+		display: flex;
+		align-items: center;
+
+		.btn-icon{
+			width: 24px;
+			height: 30px;
+			display: block;
+			fill: $primary;
+			flex: none;
+			margin-right: 13px;
+		}
+
+		.btn-text{
+			font-size: 13px;
+			line-height: 16px;
+			font-weight: bold;
+			color: #484848;
+			text-transform: uppercase;
+
+			small{
+				color: #6D8092;
+				font-size: 13px;
+				font-weight: 400;
+				text-transform: none;
+			}
+		}
+	}
+
+	@media screen and (max-width: 575px){
+		grid-template-columns: 1fr;
+		grid-gap: 20px;
+	}
+}

@@ -27,8 +27,12 @@
 @import "components/common/article-card";
 // @import "components/common/filter-nav";
 // @import "components/common/dropdown";
-// @import "components/common/accordion";
+@import "components/common/accordion";
 @import "components/common/tabs-nav";
+@import "components/common/big-article-card";
+@import "components/common/file-card";
+@import "components/common/cert-card";
+@import "components/common/small-video-block";
 
 // Sections
 @import "components/sections/first-screen-section";
@@ -44,3 +48,5 @@
 @import "components/sections/category-first-screen";
 @import "components/sections/small-info-section";
 @import "components/sections/category-main-section";
+@import "components/sections/category-main-section-mobile";
+@import "components/sections/product-page-section";

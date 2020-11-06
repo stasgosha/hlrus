@@ -25,24 +25,24 @@ $(function () {
 document.addEventListener('DOMContentLoaded', function(){
 
 	// Accordions
-	// $('.accordion').each(function(i, el){
-	// 	$(el).find('.ac-header, .ac-opener').click(function(e){
-	// 		e.preventDefault();
-	// 		e.stopPropagation();
+	$('.accordion, .js-accordion').each(function(i, el){
+		$(el).find('.ac-header, .ac-opener').click(function(e){
+			e.preventDefault();
+			e.stopPropagation();
 
-	// 		let ariaLabelEl = $(this).closest('.accordion').find('[aria-label]');
-	// 		let ariaLabelText = $(ariaLabelEl).attr('aria-label');
+			let ariaLabelEl = $(this).closest('.accordion').find('[aria-label]');
+			let ariaLabelText = $(ariaLabelEl).attr('aria-label');
 
-	// 		if (ariaLabelText == 'Open accordion') {
-	// 			$(ariaLabelEl).attr('aria-label', 'Close accordion');
-	// 		} else {
-	// 			$(ariaLabelEl).attr('aria-label', 'Open accordion');
-	// 		}
+			if (ariaLabelText == 'Развернуть') {
+				$(ariaLabelEl).attr('aria-label', 'Свернуть');
+			} else {
+				$(ariaLabelEl).attr('aria-label', 'Развернуть');
+			}
 
-	// 		$(this).closest('.accordion').find('.ac-content').stop().slideToggle(300);
-	// 		$(this).closest('.accordion').toggleClass('opened');
-	// 	});
-	// });
+			$(this).closest('.accordion, .js-accordion').find('.ac-content').stop().slideToggle(300);
+			$(this).closest('.accordion, .js-accordion').toggleClass('opened');
+		});
+	});
 
 	// Info section
 	$('.tgr-btn').on('mouseover focus', function(e){

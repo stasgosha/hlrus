@@ -1,0 +1,9 @@
+.product-page-section{
+	padding: 60px 0 35px;
+
+	.section-inner{
+		display: grid;
+		grid-template-columns: 550px 1fr;
+		grid-gap: 80px;
+	}
+}

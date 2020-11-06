@@ -63,7 +63,7 @@ body{
 		line-height: 1.44;
 		font-weight: bold;
 		margin-bottom: 30px;
-		margin-top: 30px;
+		margin-top: 45px;
 		color: $text-dark;
 
 		&:first-child{
@@ -376,6 +376,7 @@ body{
 .file-link-btn{
 	filter: drop-shadow(0px 2px 10px #E5E5E5);
 	transition: all $t;
+	display: flex;
 
 	.link-inner{
 		padding: 8px 22px 8px 19px;
