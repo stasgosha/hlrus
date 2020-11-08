@@ -5,6 +5,26 @@
 	@media screen and (max-width: 767px){
 		padding-bottom: 30px;
 	}
+
+	.section-inner{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.item-right{
+			margin-left: 30px;
+		}
+
+		@media screen and (max-width: 767px){
+			flex-direction: column;
+			align-items: stretch;
+
+			.item-right{
+				margin-left: 0;
+				margin-top: 20px;
+			}
+		}
+	}
 }
 
 .breadcrumbs-section{

@@ -1,0 +1,35 @@
+.single-post-section{
+	padding: 25px 0 50px;
+
+	.page-caption{
+		margin-bottom: 25px;
+		max-width: 760px;
+	}
+
+	.post-date{
+		display: flex;
+		align-items: center;
+		font-size: 13px;
+		line-height: 24px;
+		color: $accent;
+		font-weight: 400;
+
+		&:before{
+			content: '';
+			display: block;
+			width: 16px;
+			height: 15px;
+			background: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M14.6 2.03h-1.13v-.78a.47.47 0 00-.94 0v.78H8.47v-.78a.47.47 0 00-.94 0v.78H3.47v-.78a.47.47 0 00-.94 0v.78H1.41C.63 2.03 0 2.66 0 3.43v10.38c0 .78.63 1.4 1.4 1.4h13.2c.77 0 1.4-.62 1.4-1.4V3.44c0-.78-.63-1.4-1.4-1.4zM.93 3.43c0-.25.2-.46.47-.46h1.12v.78a.47.47 0 00.94 0v-.78h4.06v.78a.47.47 0 00.94 0v-.78h4.06v.78a.47.47 0 00.94 0v-.78h1.12c.26 0 .47.2.47.47v1.84H.94V3.44zm13.65 10.85H1.41a.47.47 0 01-.47-.47v-7.6h14.12v7.6c0 .26-.2.47-.47.47z' fill='%23124271'/%3E%3C/svg%3E") no-repeat center center / contain;
+			margin-right: 10px;
+			flex: none;
+		}
+	}
+
+	.post-meta{
+		margin-bottom: 35px;
+	}
+
+	.post-content{
+		font-weight: 400;
+	}
+}

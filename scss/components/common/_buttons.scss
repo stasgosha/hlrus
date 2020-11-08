@@ -42,6 +42,13 @@
 		margin-left: 10px;
 		display: block;
 		fill: #fff;
+
+		&:first-child{
+			margin-left: 0;
+			width: 22px;
+			height: 18px;
+			margin-right: 10px;
+		}
 	}
 
 	&:hover,
@@ -100,6 +107,15 @@
 			.btn-icon{
 				fill: #fff;
 			}
+		}
+	}
+
+	&[disabled]{
+		pointer-events: none;
+
+		.btn-inner{
+			background: #EFF1F4;
+			color: #6D8092;
 		}
 	}
 

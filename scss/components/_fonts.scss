@@ -8,6 +8,14 @@
 
 @font-face{
 	font-family: 'Uni Neue'; 
+	src: url('../fonts/UniNeueRegular-Italic.woff') format('woff');
+	font-style: italic;
+	font-display: swap;
+	font-weight: 400;
+}
+
+@font-face{
+	font-family: 'Uni Neue'; 
 	src: url('../fonts/UniNeueBold.woff') format('woff');
 	font-style: normal;
 	font-display: swap;

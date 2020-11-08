@@ -97,6 +97,7 @@
 			font-weight: bold;
 			color: #484848;
 			text-transform: uppercase;
+			transition: all $t;
 
 			small{
 				color: #6D8092;
@@ -105,10 +106,57 @@
 				text-transform: none;
 			}
 		}
+
+		&:hover,
+		&:focus{
+			.btn-text{
+				color: $primary;
+			}
+		}
 	}
+
+	&.with-description{
+		display: block;
+		font-weight: 400;
+
+		.card-inner{
+			display: grid;
+			grid-template-columns: 150px 1fr;
+			grid-gap: 40px;
+		}
+
+		.card-caption{
+			margin-bottom: 0;
+		}
+
+		.card-small-description{
+			font-size: 15px;
+			line-height: 1.333;
+			color: #6D8092;
+			margin-top: 15px;
+			margin-bottom: 30px;
+		}
+
+		.card-description{
+			margin-top: 15px;
+			font-size: 13px;
+			line-height: 20px;
+			color: #777;
+		}
+	}
+
 
 	@media screen and (max-width: 575px){
 		grid-template-columns: 1fr;
 		grid-gap: 20px;
+
+		&.with-description{
+			display: block;
+
+			.card-inner{
+				grid-template-columns: 1fr;
+				grid-gap: 20px;
+			}
+		}
 	}
 }

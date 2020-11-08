@@ -31,6 +31,10 @@
 			content: '';
 			display: block;
 			padding-top: 55%;
+
+			@media screen and (max-width: 767px){
+				padding-top: 37.931%;
+			}
 		}
 		
 		img{
@@ -147,6 +151,25 @@
 			}
 		}
 	}
+
+	@media screen and (max-width: 767px){
+		.card-hidden-content{
+			position: static;
+			transform: translateY(0);
+			visibility: visible;
+			display: none;
+			transition: unset;
+			opacity: 1;
+
+			ul{
+				padding-top: 10px;
+			}
+		}
+	}
+}
+
+.mobile-products-list{
+	display: none;
 }
 
 .production-card{

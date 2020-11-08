@@ -94,6 +94,21 @@
 		}
 	}
 
+	&.with-shadow{
+		padding: 30px;
+		border-bottom: 0;
+		margin-bottom: 0;
+		background: #FFFFFF;
+		border-radius: 2px;
+		transition: all $t;
+
+		&:hover,
+		&:focus-within{
+			z-index: 5;
+			box-shadow: 0px 2px 10px rgba(18, 66, 113, 0.22);
+		}
+	}
+
 	@media screen and (max-width: 767px){
 		.card-caption{
 			font-size: 16px;
