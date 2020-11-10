@@ -1,0 +1,58 @@
+.booklet-card{
+	border-bottom: 1px solid #EBEBEB;
+	transition: all $t;
+	padding: 25px 30px;
+	display: grid;
+	grid-template-columns: 130px 1fr;
+	grid-gap: 60px;
+
+	&:hover{
+		background: #FAFBFB;
+	}
+
+	.card-image{
+		img{
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	.card-content{
+		max-width: 950px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.card-caption{
+		font-size: 18px;
+		line-height: 1.73;
+		margin-bottom: 20px;
+		font-weight: bold;
+		color: $text-dark;
+	}
+
+	.card-text{
+		margin-bottom: 25px;
+		font-size: 14px;
+		line-height: 22px;
+	}
+
+	.card-footer{
+		margin-top: auto;
+	}
+
+	@media screen and (max-width: 991px){
+		grid-gap: 30px;
+	}
+
+	@media screen and (max-width: 575px){
+		grid-template-columns: 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.booklet-list{
+
+}

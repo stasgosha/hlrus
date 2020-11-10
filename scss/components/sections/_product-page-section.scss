@@ -4,7 +4,7 @@
 	.section-inner{
 		display: grid;
 		grid-template-columns: 550px 1fr;
-		grid-gap: 80px;
+		grid-gap: 0 80px;
 	}
 
 	.top-text{
@@ -31,6 +31,71 @@
 		display: grid;
 		grid-template-columns: 330px 1fr;
 		grid-gap: 53px;
+	}
+
+	.section-slider{
+		grid-row: span 3;
+	}
+
+	@media screen and (max-width: 1319px){
+		.section-inner{
+			grid-template-columns: 400px 1fr;
+			grid-gap: 30px;
+			align-items: flex-start;
+		}
+
+		.product-description{
+			margin-bottom: 0;
+		}
+
+		.top-text{
+			margin-bottom: 0;
+		}
+
+		.section-slider{
+			grid-row: span 2;
+		}
+
+		.product-footer{
+			grid-column: span 2;
+			grid-template-columns: 400px 1fr;
+			grid-gap: 30px;
+		}
+	}
+
+	@media screen and (max-width: 991px){
+		.section-inner{
+			grid-template-columns: 330px 1fr;
+		}
+
+		.product-footer{
+			grid-template-columns: 330px 1fr;
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		padding: 10px 0 15px;
+
+		.section-inner{
+			grid-template-columns: 100%;
+
+			.top-text{
+				order: 1;
+			}
+
+			> *{
+				order: 2;
+			}
+		}
+
+		.section-slider{
+			grid-row: span 1;
+		}
+
+		.product-footer{
+			grid-template-columns: 100%;
+			grid-column: span 1;
+		}
 	}
 }
 
@@ -138,6 +203,14 @@
 	justify-content: space-between;
 	grid-gap: 30px;
 	grid-template-columns: repeat(2, 520px);
+
+	@media screen and (max-width: 1319px){
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media screen and (max-width: 767px){
+		grid-template-columns: 100%;
+	}
 }
 
 .product-stats-list{
@@ -271,6 +344,58 @@
 
 .products-slider-wrapper{
 	padding: 0 calc(52px + 15px);
+
+	@media screen and (max-width: 1199px){
+		padding: 0 52px;
+	}
+
+	@media screen and (max-width: 575px){
+		padding: 0;
+
+		.slick-slider{
+			width: calc(100% + 107px);
+			margin-right: -107px;
+
+			.slide:not(.slick-current){
+				opacity: .5;
+			}
+		}
+	}
+
+	.slider-nav{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.slick-arrow{
+			position: static !important;
+			transform: translateY(0);
+			background: $accent;
+			border-color: $accent;
+
+			svg path{
+				stroke: #fff;
+			}
+
+			&.slick-prev{
+				order: 1;
+			}
+
+			&.slick-next{
+				order: 3;
+			}
+
+			&:hover{
+				background: $primary;
+				border-color: $primary;
+			}
+		}
+
+		.slick-dots{
+			position: static;
+			order: 2;
+		}
+	}
 }
 
 .select-format-block{

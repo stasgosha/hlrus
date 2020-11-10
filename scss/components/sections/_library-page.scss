@@ -1,0 +1,84 @@
+.library-page{
+	.page-text{
+		margin-bottom: 60px;
+		font-size: 15px;
+		line-height: 1.73;
+		font-weight: 400;
+	}
+}
+
+.library-links-list{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 30px;
+
+	@media screen and (max-width: 767px){
+		grid-template-columns: 100%;
+	}
+}
+
+.library-card{
+	position: relative;
+
+	&:after{
+		content: '';
+		display: block;
+		width: 0;
+		height: 100%;
+		border-right: 1px dashed rgba($accent, .22);
+		position: absolute;
+		right: -15px;
+		top: 0;
+	}
+
+	&:last-child{
+		&:after{
+			display: none;
+		}
+	}
+
+	.card-text{
+		font-size: 16px;
+		line-height: 1.62;
+		color: #6D8092;
+		font-weight: 400;
+
+		strong{
+			font-weight: bold;
+			color: $accent;
+		}
+
+		a:not(.file-link-btn){
+			text-decoration: underline;
+			color: $primary;
+			white-space: nowrap;
+
+			&:hover{
+				text-decoration: none;
+			}
+		}
+	}
+
+	.card-footer{
+		margin-top: 16px;
+	}
+
+	.file-link-btn{
+		.link-icon:last-child{
+			margin-right: 0;
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		&:after{
+			top: auto;
+			right: auto;
+			bottom: -15px;
+			left: 0;
+			width: 100%;
+			height: 0;
+			border-right: 0;
+			border-bottom: 1px dashed rgba($accent, .22);
+		}
+	}
+}

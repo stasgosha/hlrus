@@ -72,4 +72,27 @@
 			object-position: center center;
 		}
 	}
+
+	@media screen and (max-width: 767px){
+		align-items: center;
+		grid-gap: 15px;
+		grid-template-columns: 160px 1fr;
+
+		.card-image{
+			width: 160px;
+			height: 144px;
+		}
+	}
+
+	@media screen and (max-width: 575px){
+		grid-template-columns: min-content;
+		justify-content: center;
+		text-align: center;
+
+		&.xs-left{
+			grid-template-columns: 100%;
+			justify-content: flex-start;
+			text-align: left;
+		}
+	}
 }

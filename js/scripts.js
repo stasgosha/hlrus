@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			}
 
 			$(this).closest('.accordion, .js-accordion').find('> .ac-content').stop().slideToggle(300);
+			$(this).closest('.accordion, .js-accordion').find('.slick-slider').slick('setPosition');
 			$(this).closest('.accordion, .js-accordion').toggleClass('opened');
 		});
 	});
@@ -167,7 +168,24 @@ document.addEventListener('DOMContentLoaded', function(){
 			...arrowsButtons,
 			dots: false,
 			infinite: true,
-			speed: 600
+			speed: 600,
+			responsive: [
+				{
+					breakpoint: 1320,
+					settings: {
+						slidesToShow: (slidesCount / 2)
+					}
+				},
+				{
+					breakpoint: 576,
+					settings: {
+						slidesToShow: 2,
+						dots: true,
+						appendDots: $(el).next('.slider-nav'),
+						appendArrows: $(el).next('.slider-nav')
+					}
+				}
+			]
 		}
 
 		if (slidesCount == 4) {
