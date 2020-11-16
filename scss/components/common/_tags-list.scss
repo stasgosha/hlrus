@@ -44,4 +44,19 @@
 			}
 		}
 	}
+
+	@media screen and (max-width: 767px){
+		margin-bottom: -10px;
+
+		li{
+			margin-right: 10px;
+			margin-bottom: 10px;
+
+			a{
+				padding-left: 10px;
+				padding-right: 10px;
+				font-size: 14px;
+			}
+		}
+	}
 }
