@@ -231,4 +231,23 @@
 			border-bottom-color: transparent;
 		}
 	}
+
+	@media screen and (min-width: 1319px){
+		&.big{
+			font-size: 22px;
+			line-height: 1;
+
+			small{
+				left: auto;
+				right: 100%;
+				top: 0.4em;
+				line-height: .75;
+				transform-origin: right top;
+			}
+
+			strong{
+				font-size: 64px;
+			}
+		}
+	}
 }

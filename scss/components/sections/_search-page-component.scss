@@ -1,0 +1,171 @@
+.search-page-component{
+	.cmp-header{
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		width: calc(100% + 15px * 2);
+		margin-left: -15px;
+		margin-right: -15px;
+		margin-bottom: 64px;
+		
+		.item{
+			padding: 0 15px;
+		}
+
+		@media screen and (max-width: 767px){
+			flex-direction: column;
+			align-items: stretch;
+			margin-bottom: 30px;
+		}
+	}
+
+	.cmp-caption{
+		font-size: 24px;
+		font-weight: bold;
+		color: $accent;
+	}
+
+	.cmp-results-count{
+		font-size: 16px;
+		line-height: 1.35;
+		color: $primary;
+
+		strong{
+			font-weight: bold;
+		}
+	}
+
+	.cmp-tabs-nav{
+		display: flex;
+		width: calc(100% + 25px * 2);
+		margin-left: -25px;
+		margin-right: -25px;
+		font-size: 16px;
+		line-height: 1.35;
+		margin-bottom: 40px;
+		
+		li{
+			padding: 0 25px;
+
+			.nav-btn{
+				color: #6D8092;
+				transition: all $t;
+
+				&:hover,
+				&:focus,
+				&.current{
+					color: $primary;
+					outline: none;
+				}
+
+				&.current{
+					cursor: default;
+					border-bottom: 1px dashed currentcolor;
+				}
+			}
+		}
+
+		@media screen and (max-width: 767px){
+			margin-bottom: 30px;
+		}
+
+		@media screen and (max-width: 575px){
+			flex-wrap: wrap;
+
+			li{
+				width: 100%;
+				margin-bottom: 24px;
+
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	.cmp-results{
+
+	}
+
+	.search-results-list{
+
+	}
+
+	.result-card{
+		padding: 25px 30px;
+		border-top: 1px solid #EBEBEB;
+		display: grid;
+		grid-template-columns: 145px 1fr;
+		grid-gap: 25px;
+		align-items: center;
+
+		&:last-child{
+			border-bottom: 1px solid #EBEBEB;
+		}
+
+		&.no-image{
+			grid-template-columns: 100%;
+		}
+
+		.breadcrumbs{
+			line-height: 1.4;
+			margin: 0;
+		}
+
+		.card-image{
+			img{
+				width: 100%;
+				height: 130px;
+				display: block;
+				object-fit: contain;
+				object-position: center center;
+			}
+		}
+
+		.card-caption{
+			font-size: 18px;
+			line-height: 1.43;
+			margin-bottom: 15px;
+			font-weight: bold;
+			color: $text-dark;
+			display: block;
+
+			&:hover,
+			&:focus{
+				color: $primary;
+			}
+		}
+
+		.card-id{
+			margin-top: 35px;
+			font-size: 13px;
+			line-height: 24px;
+			font-weight: 400;
+			color: $accent;
+
+			strong{
+				color: $text-dark;
+			}
+		}
+
+		@media screen and (max-width: 575px){
+			padding: 15px;
+			width: calc(100% + 15px * 2);
+			margin-left: -15px;
+			margin-right: -15px;
+			grid-template-columns: 90px 1fr;
+			grid-gap: 10px;
+			align-items: flex-start;
+
+			.card-image{
+				img{
+					height: 80px;
+				}
+			}
+
+			.card-id{
+				margin-top: 7px;
+			}
+		}
+	}
+}

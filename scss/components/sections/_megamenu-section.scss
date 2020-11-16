@@ -1,0 +1,236 @@
+.megamenu{
+	width: 100%;
+}
+
+.megamenu-component{
+	width: 100%;
+	filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
+
+	.cmp-inner{
+		width: 100%;
+		background: #fff;
+		@include clipCorner(40px);
+		display: grid;
+		grid-template-columns: 25% 1fr;
+	}
+
+	.cmp-sidebar{
+		background: #fff;
+		box-shadow: 0px 2px 10px #E5E5E5;
+		padding: 40px 40px 80px 70px;
+	}
+
+	.cmp-content{
+		padding: 18px 30px 80px;
+
+		.cmp-content-inner{
+			max-width: 650px;
+			margin-left: auto;
+			margin-right: auto;
+			width: 100%;
+		}
+
+		.category-caption{
+			font-size: 18px;
+			font-weight: bold;
+			color: $text-dark;
+			padding-bottom: 7px;
+			border-bottom: 1px solid rgba($accent, .12);
+			margin-bottom: 20px;
+		}
+	}
+
+	.cmp-footer{
+		margin-top: 20px;
+		padding-top: 14px;
+		border-top: 1px solid rgba($accent, .12);
+	}
+
+	.cmp-tabs{
+		.tab{
+			display: none;
+		}
+	}
+
+	.tab-menu{
+		columns: 2;
+		column-gap: 30px;
+
+		a{
+			display: block;
+
+			&:hover,
+			&:focus{
+				color: $primary !important;
+			}
+		}
+
+		> li{
+			margin-bottom: 15px;
+			break-inside: avoid;
+
+			> a{
+				font-size: 15px;
+				font-weight: bold;
+				margin-bottom: 9px;
+				color: $accent;
+			}
+
+			&.current-menu-item,
+			&.current-menu-parent{
+				> a{
+					color: $primary;
+				}
+			}
+			
+			&.current-menu-item{
+				> a{
+					cursor: default;
+				}
+			}
+		}
+
+		.sub-menu{
+			li{
+				a{
+					font-size: 14px;
+					line-height: 22px;
+					font-weight: 400;
+					color: $text-color;
+				}
+
+				&.current-menu-item,
+				&.current-menu-parent{
+					a{
+						color: $primary;
+					}
+				}
+				
+				&.current-menu-item{
+					a{
+						cursor: default;
+					}
+				}
+			}
+		}
+	}
+
+	.side-nav{
+		font-size: 15px;
+		line-height: 1.333;
+		font-weight: 400;
+		margin-bottom: 15px;
+
+		li{
+			margin-bottom: 15px;
+
+			&:last-child{
+				margin-bottom: 0;
+			}
+
+			a{
+				color: $text-dark;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+
+				&:after{
+					content: '';
+					display: block;
+					width: 5px;
+					height: 9px;
+					background: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 9'%3E%3Cpath d='M1 8l3-3.5L1 1' stroke='%236D8092' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center center / contain;
+					transition: all $t;
+					flex: none;
+				}
+
+				&:hover,
+				&:focus{
+					color: $primary;
+
+					&:after{
+						background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 9'%3E%3Cpath d='M1 8l3-3.5L1 1' stroke='%23E30613' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+					}
+				}
+			}
+
+			&.active{
+				a{
+					color: $primary;
+
+					&:after{
+						background-image: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 9'%3E%3Cpath d='M1 8l3-3.5L1 1' stroke='%23E30613' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+					}
+				}
+			}
+		}
+	}
+
+	.cmp-search-form{
+		width: 100%;
+		max-width: 650px;
+		margin-left: auto;
+		margin-right: auto;
+
+		.form-inner{
+			position: relative;
+		}
+
+		.form-field{
+			height: 42px;
+			padding: 0 18px;
+			background: #F7F7F7;
+			@include clipCorner(10px);
+			appearance: none;
+			border: 0;
+			box-shadow: none;
+			width: 100%;
+			font-size: 15px;
+			font-weight: 400;
+			color: $accent;
+			font-family: inherit;
+
+			&::placeholder{
+				opacity: 1;
+				color: $accent;
+			}
+
+			&:hover,
+			&:focus{
+				outline: none;
+			}
+		}
+
+		.form-button{
+			width: 60px;
+			height: 100%;
+			position: absolute;
+			right: 0;
+			top: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			svg{
+				width: 20px;
+				height: 20px;
+				fill: $accent;
+				transition: all $t;
+			}
+
+			&:hover,
+			&:focus{
+				svg{
+					fill: $primary;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 1319px){
+		.cmp-sidebar{
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+	}
+}

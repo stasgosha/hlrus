@@ -16,6 +16,9 @@
 		width: calc(100% + 15px * 2);
 		margin-left: -15px;
 		margin-right: -15px;
+		position: relative;
+		z-index: 2;
+		background: #fff;
 		
 		.header-block{
 			padding: 0 15px;
@@ -46,6 +49,23 @@
 
 	&.sticky{
 		padding: 10px 0;
+	}
+
+	.megamenu{
+		position: absolute;
+		left: 0;
+		top: 100%;
+		z-index: -1;
+		transition: all $t;
+		transform: translateY(30px);
+		opacity: 0;
+		visibility: hidden;
+
+		&.visible{
+			transform: translateY(0);
+			opacity: 1;
+			visibility: visible;
+		}
 	}
 
 	@media screen and (max-width: 1199px){
@@ -186,5 +206,31 @@
 		img{
 			height: 30px;
 		}
+	}
+}
+
+.new-products-link{
+	font-size: 15px;
+	line-height: 1.333;
+	color: $accent;
+	font-weight: 400;
+	position: relative;
+	padding-left: 7px;
+
+	&:before{
+		content: '';
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 4px 4px 0;
+		border-color: transparent $primary transparent transparent;
+		position: absolute;
+		left: 0;
+		top: 0.25em;
+	}
+
+	&:hover,
+	&:focus{
+		color: $primary;
 	}
 }

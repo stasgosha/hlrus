@@ -1,0 +1,163 @@
+.manufacture-section{
+	padding: 90px 0 55px;
+
+	.section-inner{
+		display: grid;
+		grid-template-columns: 1fr 50%;
+		grid-gap: 30px;
+		width: 100%;
+		justify-content: space-between;
+		margin-bottom: 75px;
+	}
+
+	.section-content{
+		max-width: 550px;
+		font-weight: 400;
+
+		strong{
+			color: $text-dark;
+		}
+	}
+
+	.section-info-list{
+		margin-bottom: 80px;
+		display: grid;
+		grid-gap: 60px;
+	}
+
+	.quote-block{
+		padding-left: 21px;
+		border-left: 3px solid $primary;
+		color: $text-dark;
+		font-weight: bold;
+		font-size: 20px;
+		line-height: 1.4;
+	}
+
+	@media screen and (max-width: 991px){
+		padding: 45px 0;
+
+		.section-inner{
+			grid-template-columns: 100%;
+			margin-bottom: 40px;
+		}
+
+		.section-content{
+			max-width: unset;
+		}
+
+		.section-info-list{
+			grid-gap: 40px;
+			margin-bottom: 40px;
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		.quote-block{
+			font-size: 16px;
+		}
+	}
+}
+
+.manufacture-info-card{
+	display: grid;
+	grid-template-columns: 410px 1fr;
+	grid-gap: 110px;
+	align-items: center;
+
+	.card-image{
+		img{
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	.card-content{
+		line-height: 1.87;
+		font-weight: 400;
+	}
+
+	@media screen and (max-width: 1319px){
+		grid-gap: 30px;
+		grid-template-columns: 300px 1fr;
+	}
+
+	@media screen and (max-width: 991px){
+		grid-template-columns: 100%;
+		grid-gap: 40px;
+
+		.card-image{
+			order: 2;
+		}
+	}
+}
+
+.gallery-slider{
+	img{
+		display: block;
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+.gallery-slider{
+	margin: 0 !important;
+	width: 100% !important;
+
+	.slide{
+		padding: 0 !important;
+
+		img{
+			width: 100%;
+			display: block;
+			height: auto;
+		}
+	}
+
+	.slick-dots{
+		bottom: 12px !important;
+
+		li{
+			button{
+
+			}
+
+			&.slick-active{
+				button{
+					background: $primary;
+				}
+			}
+		}
+	}
+
+	.slick-arrow{
+		&.slick-prev{
+			left: 10px;
+		}
+
+		&.slick-next{
+			right: 10px;
+		}
+
+		svg{
+			circle{
+				fill: rgba(#fff, .2);
+				stroke: rgba(#fff, .2);
+			}
+
+			path{
+				stroke: #fff;
+			}
+		}
+
+		&:hover{
+			svg{
+				circle{
+					fill: $primary;
+					stroke: $primary;
+				}
+			}
+		}
+	}
+}

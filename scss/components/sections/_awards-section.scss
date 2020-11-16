@@ -1,0 +1,275 @@
+.awards-section{
+	.section-caption{
+		margin-bottom: 38px;
+	}
+
+	@media screen and (max-width: 991px){
+		background: #EFF1F4;
+		padding-top: 50px;
+
+		.section-caption{
+			margin-bottom: 15px;
+		}
+	}
+}
+
+.awards-component{
+	width: calc(100% + 190px * 2);
+	padding-left: 190px;
+	padding-right: 190px;
+	margin-right: -190px;
+	margin-left: -190px;
+	background: #EFF1F4;
+	display: grid;
+	grid-template-columns: 1fr 300px;
+	grid-gap: 30px;
+
+	.cmp-left{
+		padding: 57px 0 51px;
+	}
+
+	.cmp-right{
+		padding: 24px 15px;
+		background: #F7F7F7;
+		display: flex;
+		justify-content: center;
+	}
+
+	.cmp-previews-slider{
+		margin-top: 0;
+		margin-bottom: 0;
+
+		.slide{
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+
+		.slick-arrow{
+			width: 14px;
+			height: 8px;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+
+			svg{
+				width: 100%;
+				height: 100%;
+				stroke: $accent;
+				transition: all $t;
+			}
+
+			&:hover{
+				svg{
+					stroke: $primary;
+				}
+			}
+
+			&.slick-prev{
+				top: 0;
+			}
+
+			&.slick-next{
+				top: auto;
+				bottom: 0;
+			}
+		}
+
+		@media screen and (max-width: 767px){
+			.slide{
+				padding-bottom: 0;
+				padding-top: 0;
+			}
+		}
+
+		@media screen and (max-width: 575px){
+			width: calc(100% + 130px * 2);
+			margin-left: -130px;
+			margin-right: -130px;
+
+			.slide{
+				padding: 0;
+			}
+		}
+	}
+
+	@media screen and (max-width: 1319px){
+		grid-template-columns: 1fr 200px;
+	}
+
+	@media screen and (max-width: 991px){
+		grid-template-columns: 100%;
+		padding-bottom: 50px;
+
+		.cmp-right{
+			order: 1;
+			background: transparent;
+		}
+
+		.cmp-left{
+			order: 2;
+			padding: 0;
+		}
+	}
+}
+
+.award-card{
+	display: grid;
+	align-items: flex-start;
+	grid-template-columns: 330px 1fr;
+	grid-gap: 16px;
+
+	.card-image{
+		position: relative;
+		background: url(../img/backgrounds/frame.jpg) no-repeat center center / contain;
+		
+		&:before{
+			content: '';
+			display: block;
+			padding-top: 132.0242%;
+		}
+
+		img{
+			display: block;
+			width: 76.1329%;
+			height: 82.8375%;
+			position: absolute;
+			left: 10.574%;
+			top: 7.78%;
+			object-fit: cover;
+			object-position: center center;
+		}
+	}
+
+	.card-content{
+		padding: 34px 0;
+	}
+
+	.card-caption{
+		font-size: 26px;
+		line-height: 1.35;
+		margin-bottom: 21px;
+		color: $text-dark;
+		max-width: 400px;
+	}
+
+	@media screen and (max-width: 1319px){
+		grid-template-columns: 260px 1fr;
+
+		.card-content{
+			padding: 0;
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		grid-template-columns: 100%;
+
+		.card-image{
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 575px){
+		.card-caption{
+			font-size: 16px;
+			margin-bottom: 15px;
+		}
+	}
+}
+
+.small-award-card{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: pointer;
+	max-width: 170px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+
+	.card-image{
+		width: 90px;
+		margin-bottom: 5px;
+
+		img{
+			display: block;
+			max-width: 100%;
+			height: auto;
+			transition: all $t;
+		}
+	}
+
+	.card-caption{
+		font-size: 13px;
+		line-height: 1.35;
+		color: $text-dark;
+		font-weight: bold;
+		transition: all $t;
+	}
+
+	&:hover,
+	&:focus,
+	.slick-current &{
+		.card-caption{
+			color: #124271;
+		}
+
+		.card-image{
+			img{
+				box-shadow: 0px 0px 16px rgba(18, 66, 113, 0.22);
+			}
+		}
+	}
+
+	.slick-current &{
+		cursor: default;
+	}
+
+	@media screen and (max-width: 767px){
+		max-width: 210px;
+
+		.card-image{
+			width: 100%;
+			position: relative;
+			margin-bottom: 0;
+			
+			&:before{
+				content: '';
+				display: block;
+				padding-top: 132.0242%;
+			}
+
+			&:after{
+				content: '';
+				display: block;
+				background: url(../img/backgrounds/frame.jpg) no-repeat center center / contain;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				opacity: 0;
+				transition: all $t;
+				z-index: -1;
+
+				.slick-current &{
+					opacity: 1;
+				}
+			}
+
+			img{
+				display: block;
+				width: 76.1329%;
+				height: 82.8375%;
+				position: absolute;
+				left: 10.574%;
+				top: 7.78%;
+				object-fit: cover;
+				object-position: center center;
+			}
+		}
+
+		.card-content{
+			display: none;
+		}
+	}
+}

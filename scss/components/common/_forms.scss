@@ -45,6 +45,29 @@
 		}
 	}
 
+	.form-field{
+		position: relative;
+
+		&:before{
+			content: '';
+			display: block;
+			width: 10px;
+			height: 10px;
+			background: linear-gradient(-45deg, #fff 0%, #fff calc(50% - 2px), #EBEBEB 50%, #fff 50%, #fff 100%);
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			z-index: 5;
+			transition: all $t;
+		}
+
+		&:focus-within{
+			&:before{
+				background: linear-gradient(-45deg, #fff 0%, #fff calc(50% - 2px), $primary 50%, #fff 50%, #fff 100%);
+			}
+		}
+	}
+
 	.input-field,
 	textarea{
 		@include clipCorner(10px);
@@ -228,6 +251,7 @@
 		padding-left: 25px;
 		cursor: pointer;
 		font-weight: 400;
+		display: block;
 
 		&:before{
 			content: '';
@@ -258,5 +282,16 @@
 
 	input:checked + .fake-label:after{
 		opacity: 1;
+	}
+
+	&.on-light-bg{
+		.fake-label{
+			color: #6D8092;
+			padding-left: 25px;
+
+			&:before{
+				border: 1px solid rgba($accent, .3);
+			}
+		}
 	}
 }
