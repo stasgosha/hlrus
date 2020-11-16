@@ -45,6 +45,46 @@ document.addEventListener('DOMContentLoaded', function(){
 		});
 	});
 
+	// Mobile top nav
+	$('.mobile-top-nav').each(function(i, el){
+		let currentLayer = 1;
+
+		function goDeep(selector) {
+			currentLayer++;
+
+			console.log(selector);
+
+			$(selector).show().siblings().hide();
+			$(el).attr('data-layer', currentLayer);
+		}
+
+		function goBack(){
+			currentLayer--;
+			$(el).attr('data-layer', currentLayer);
+		}
+
+		$(el).find('[data-subnav]').click(function(e){
+			e.preventDefault();
+
+			goDeep( $(this).data('subnav') );
+		});
+
+		$(el).find('.back-link').click(function(e){
+			e.preventDefault();
+
+			goBack();
+		});
+
+		let tabMenu = $(el).find('.tab-menu');
+
+		tabMenu.find('.menu-item-has-children').click(function(e){
+			$(this).find('.sub-menu').stop().slideToggle(300);
+			$(this).toggleClass('opened');
+		});
+
+		tabMenu.find('.menu-item-has-children a').click(e => e.preventDefault());
+	});
+
 	// Top nav
 	$('.megamenu-component').each(function(i, el){
 		let categoriesLinks = $(el).find('.side-nav a');
@@ -408,6 +448,10 @@ document.addEventListener('DOMContentLoaded', function(){
 	$(document).on('click', 'a[href^="#"]', function (event) {
 		event.preventDefault();
 
+		if ($.attr(this, 'href') === '#') {
+			return false;
+		}
+
 		$('html, body').animate({
 			scrollTop: $($.attr(this, 'href')).offset().top - 80
 		}, 500);
@@ -418,26 +462,8 @@ document.addEventListener('DOMContentLoaded', function(){
 		e.preventDefault();
 
 		$(this).toggleClass('active');
-		$('.panel').toggleClass('opened');
-		$('body').toggleClass('panel-opened');
+		$('.mobile-top-nav').toggleClass('opened');
 	});
-
-	$('.panel-close').click(function(e){
-		e.preventDefault();
-
-		$('.menu-opener').trigger('click');
-	});
-
-	// Mobile nav
-	// $('.mobile-top-nav a').click(function(e){
-	// 	e.stopPropagation();
-	// 	// $('.menu-opener').click();
-	// });
-
-	// $('.mobile-top-nav li').click(function(){
-	// 	// $('.menu-opener').click();
-	// 	$(this).find('.sub-menu').slideToggle(300);
-	// });
 
 	// Sticky Header
 

@@ -4,7 +4,7 @@
 	top: 0;
 	z-index: 200;
 	background: #fff;
-	width: 280px;
+	width: 100%;
 	height: 100vh;
 	overflow-y: auto;
 	overscroll-behavior-y: contain;
@@ -26,113 +26,5 @@
 
 	.contacts-list{
 		margin-bottom: 30px;
-	}
-}
-
-// body{
-// 	position: relative;
-
-// 	&:before{
-// 		content: '';
-// 		display: block;
-// 		width: 100%;
-// 		height: 100%;
-// 		position: absolute;
-// 		left: 0;
-// 		top: 0;
-// 		background: rgba(#000, .67);
-// 		visibility: hidden;
-// 		opacity: 0;
-// 		transition: all $t;
-// 		pointer-events: none;
-// 		z-index: 150;
-// 	}
-
-// 	&.panel-opened{
-// 		&:before{
-// 			opacity: 1;
-// 			visibility: visible;
-// 			pointer-events: auto;
-// 		}
-// 	}
-// }
-
-.panel-close{
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 30px;
-	height: 30px;
-	// border-radius: 50%;
-	opacity: 1;
-	transition: all $t;
-	appearance: none;
-	background: transparent;
-	border: 0;
-	cursor: pointer;
-
-	&:before,
-	&:after{
-		content: '';
-		display: block;
-		width: 16px;
-		height: 2px;
-		background: #000;
-		position: absolute;
-		left: calc(50% - 16px / 2);
-		top: calc(50% - 2px / 2);
-		transition: all $t;
-	}
-
-	&:before{
-		transform: rotate(-45deg);
-	}
-
-	&:after{
-		transform: rotate(45deg);
-	}
-
-	&:hover{
-		&:before,
-		&:after{
-			background: $primary;
-		}
-	}
-}
-
-.panel-nav{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 20px 0;
-
-	li{
-		font-size: 18px;
-		line-height: 30px;
-		margin-bottom: 12px;
-
-		&:last-child{
-			margin-bottom: 0;
-		}
-
-		a{
-			text-transform: uppercase;
-			letter-spacing: 0.05em;
-			color: inherit;
-			font-weight: 600;
-		}
-
-		&.current-menu-item,
-		&.current-menu-parent{
-			a{
-				color: $primary;
-			}
-		}
-		
-		&.current-menu-item{
-			a{
-				cursor: default;
-			}
-		}
 	}
 }
